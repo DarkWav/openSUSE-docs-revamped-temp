@@ -27,7 +27,7 @@
    `sudo zypper install-new-recommends --repo nvidia` Alternatively you can also specify which version with:
    `sudo zypper in nvidia-video-G06` or
    `sudo zypper in x11-video-nvidiaG05` or 
-   `sudo zypper in x11-video-nvidiaG04` (you can use `zypper se -s nvidia-video` or `zypper se -s x11-video-nvidia` to help you determine which driver best fits your hardware`).
+   `sudo zypper in x11-video-nvidiaG04` (you can use `zypper se -s nvidia-video` or `zypper se -s x11-video-nvidia` to help you determine which driver best fits your hardware).
 3. Reboot.
 
 #### CUDA
@@ -51,7 +51,7 @@ $ sudo zypper ref -rf  # to refresh all repositories.
     - [https://www.nvidia.com/Download/Find.aspx](https://www.nvidia.com/Download/Find.aspx)
     - [https://www.nvidia.com/Download/index.aspx](https://www.nvidia.com/Download/index.aspx)
     - [https://http.download.nvidia.com/XFree86/nvidia-installer/](https://http.download.nvidia.com/XFree86/nvidia-installer/)
-4. Let's say you downloaded NVIDIA into your `$HOME` from the new feature branch which as of writing is NVIDIA 495.44, you will get the `NVIDIA-Linux-x86_64-495.44.run`. Then run `sudo sh -c "$HOME/NVIDIA-Linux-x86_64-495.44.run -e"` for expert mode. Choose the things you needed from the install.
+4. Let's say you downloaded NVIDIA into your `$HOME` from the new feature branch which as of writing is NVIDIA 525.85.05, you will get the `NVIDIA-Linux-x86_64-525.85.05.run`. Then run `sudo sh -c "$HOME/NVIDIA-Linux-x86_64-525.85.05.run -e"` for expert mode. Choose the things you needed from the install.
 5. Once done, run `sudo mkinitrd` which calls dracut to regenerate the initramfs to make sure the NVIDIA modules are installed.
 6. Disabling the nouveau can already be done when installing NVIDIA-Linux.XXX.xx.run. But in case you want to disable it manually, disable the nouveau driver by adding this to your kernel parameters `rd.driver.blacklist=nouveau nouveau.modeset=0` in `/etc/default/grub` or blacklisting it by running `# echo "blacklist nouveau" >> /etc/modprobe.d/nouveau-blacklist.conf`. If you did the former, run `sudo grub2-mkconfig -o /boot/grub/grub.cfg`.
 7. Reboot.
